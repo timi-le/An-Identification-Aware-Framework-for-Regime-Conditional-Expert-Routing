@@ -14,8 +14,5 @@ Run `pdflatex main.tex`, `bibtex main`, then `pdflatex main.tex` twice. Overleaf
 ## Scope and overlap
 This is the focused revision of the saved September architecture manuscript, using the requested identification-aware title. It is not an expansion by page count of the older 55-page workbook. The four-scenario diagnostic and router also appear in the later Market Transitions manuscript; these are shared results, not independent experiments. No validated live alpha, full causal discovery system or FPGA acceleration is claimed. No private logs or production settings are included.
 
-## Reference audit
-SelectiveNet and DoWhy were checked against their primary publication pages. Adaptive Mixtures of Local Experts was checked against its author's university page and publisher metadata. The original Olapade technical note is supplied by the author; its saved DOI is corroborated by the author's ResearchGate record, but the Zenodo landing page could not be retrieved during this revision. This is documented rather than described as a successful live-link verification.
 
-## Publication status
-Working paper for author review; no acceptance or peer-review claim. Review all content and overlap disclosures before posting. This package does not publish anything or alter any repository.
+
