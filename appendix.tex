@@ -11,6 +11,11 @@ The mean hard-minus-soft MSE differences are 0.129911 (Monte Carlo standard erro
 The conditional-mean derivation in the main text assumes exact coefficients and correct posterior probabilities. The experiment uses estimated coefficients and, deliberately in one scenario, wrong emission parameters. The mathematical identity is an explanation of the nominal behavior, not a guarantee for the implemented filter under misspecification.
 
 \section{Execution and artifact availability}
+The public source code, reference evidence router, synthetic-data generator, contract tests, and saved diagnostic results are available in the project's \href{https://github.com/timi-le/An-Identification-Aware-Framework-for-Regime-Conditional-Expert-Routing}{GitHub repository}:
+\begin{quote}\small
+\url{https://github.com/timi-le/An-Identification-Aware-Framework-for-Regime-Conditional-Expert-Routing}
+\end{quote}
+
 Run \texttt{python reproduce.py} at the public package root. The diagnostic outputs include raw replicate MSE and mean absolute error, summary means and standard errors, state-recovery diagnostics, paired comparisons, and an environment manifest. Mean absolute error averages the absolute rather than squared coefficient deviation and is provided as a secondary diagnostic. No raw financial or user data are required for this paper's numerical tables.
 
 The implementation uses CPU-based NumPy and pandas; no GPU or provider endpoint is invoked. The reproduced environment uses Python 3.12.14, NumPy 2.3.5, pandas 2.2.3, and Matplotlib 3.10.8. The package pins its three runtime dependencies; SciPy and scikit-learn are not required. The seed schedule and nominal parameters are fixed in the supplied script. Five router contract tests cover implemented behavior. Full statistical results consist of 800 generated datasets and 4,000 method rows.
