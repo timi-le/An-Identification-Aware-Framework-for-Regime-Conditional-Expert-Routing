@@ -2,6 +2,8 @@
 ## An Identification-Aware Framework for Regime-Conditional Expert Routing
 Timilehin Olapade. Revised public working paper, 31 October 2026.
 
+![CMTF animated explainer](assets/cmtf-readme.gif)
+
 ## Overleaf
 Upload this ZIP as a new project. Select `main.tex` as the main document and pdfLaTeX as the compiler. The included vector figure and results let you compile without running Python. Bibliography uses BibTeX (plainnat).
 
