@@ -4,5 +4,7 @@ title: "Agentic Causal Macro Intelligence: An Identification-Aware Framework for
 authors:
   - family-names: Olapade
     given-names: Timilehin
-date-released: 2026-10-18
-version: "2026-10-18-review"
+    orcid: "https://orcid.org/0009-0001-4211-3105"
+date-released: 2026-10-31
+version: "2026-10-31"
+url: "https://github.com/timi-le/An-Identification-Aware-Framework-for-Regime-Conditional-Expert-Routing"

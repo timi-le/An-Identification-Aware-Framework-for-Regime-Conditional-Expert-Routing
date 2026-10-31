@@ -1,1 +1,5 @@
-Research-only release candidate. Keep private until author clearance. No raw operational logs, original prompts, credentials, production trading engine or private author archive are included. Synthetic results reproduce under stated assumptions; aggregate operational audits require restricted source inputs for independent re-auditing.
+# Data and code availability
+
+This public working-paper release includes the synthetic-data generator, declared random seeds, reference evidence router, contract tests, replicate-level results, and summaries. Run `python reproduce.py` to regenerate the diagnostic outputs under `results/cmtf/`.
+
+The reproducible experiment uses synthetic data. No provider keys, private trading logs, account identifiers, original model prompts, or production trading engine are included. Operational audits discussed in the manuscript are descriptive; restricted source inputs are not supplied for independent re-auditing.
