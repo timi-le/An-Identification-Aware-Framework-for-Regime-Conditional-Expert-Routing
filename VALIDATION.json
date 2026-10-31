@@ -1,0 +1,15 @@
+{
+  "author": "Timilehin Olapade",
+  "pages": 15,
+  "router_tests_passed": 5,
+  "replicate_rows_reproduced": 4000,
+  "diagnostic_rows_reproduced": 800,
+  "numerical_tolerance": 1e-12,
+  "overfull_boxes": 0,
+  "undefined_references": 0,
+  "visual_review": "all 15 pages inspected",
+  "scope": "synthetic diagnostics and reference contract; not live validation",
+  "overlap": "Same four-scenario diagnostic and reference router are included in the later market-transitions manuscript.",
+  "affiliation": "Haldane Technologies Inc.",
+  "affiliation_edit": "Removed ATRX Intelligence; research content unchanged."
+}

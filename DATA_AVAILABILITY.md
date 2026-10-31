@@ -1,0 +1,1 @@
+Research-only release candidate. Keep private until author clearance. No raw operational logs, original prompts, credentials, production trading engine or private author archive are included. Synthetic results reproduce under stated assumptions; aggregate operational audits require restricted source inputs for independent re-auditing.

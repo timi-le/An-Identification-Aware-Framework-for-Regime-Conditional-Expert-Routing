@@ -1,0 +1,14 @@
+{
+  "synthetic_replicates.csv": {
+    "rows": 4000,
+    "matches_reference": true
+  },
+  "synthetic_summary.csv": {
+    "rows": 20,
+    "matches_reference": true
+  },
+  "synthetic_diagnostics.csv": {
+    "rows": 800,
+    "matches_reference": true
+  }
+}

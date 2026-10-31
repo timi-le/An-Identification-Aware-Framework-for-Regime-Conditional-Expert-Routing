@@ -1,0 +1,33 @@
+\section{Architectural implications and evaluation boundaries}
+\subsection{From a macroeconomic proposal to an inspectable decision}
+A concrete use case is a proposal that an unexpected policy-rate increase changes an asset price through interest-rate expectations and financing conditions. The neural component can extract a candidate event and suggest a pathway. CMTF then requires an explicit question: which surprise measure, which asset outcome, which horizon, and which information vintage? An announcement can reveal economic information as well as change policy. Consequently, calling it a policy shock does not make the treatment independent of other causes of the outcome.
+
+Identification means that the target causal effect is determined by the assumed model and the distribution of observed variables. Estimation means calculating a numerical approximation from a finite sample after choosing an identification argument. Neither a plausible narrative nor a high regime probability substitutes for that argument. An evidence contract is the structured record that keeps these distinctions attached to a proposal as it passes between components.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=7mm and 8mm,box/.style={draw,rounded corners=2pt,text width=5.9cm,align=left,inner sep=7pt,font=\small},arr/.style={-{Latex[length=2mm]},thick}]
+\node[box] (p) {\textbf{Proposal and causal question}\\Neural output; treatment, outcome, horizon; candidate mechanism.};
+\node[box,right=of p] (a) {\textbf{Assessment and evidence record}\\Declared assumptions, identification argument, estimate, timing and provenance.};
+\node[box,below=of a] (g) {\textbf{Implemented eligibility contract}\\Reject invalid, unidentified, unavailable or expired records.};
+\node[box,left=of g] (r) {\textbf{Eligible routing or abstention}\\Normalize signed scores; preserve rejection reasons.};
+\node[box,below=of r] (x) {\textbf{Separate downstream controls}\\Portfolio limits, order validation and execution; outside this demonstration.};
+\draw[arr] (p)--(a);\draw[arr] (a)--(g);\draw[arr] (g)--(r);\draw[arr] (r)--(x);
+\end{tikzpicture}
+\caption{The proposed architecture separates semantic assessment from mechanical eligibility checks. Only the eligibility and routing contract is implemented here. Neural generation, economic identification and execution are not validated by this diagram. The synthetic regime filter is a separate diagnostic module.}
+\end{figure}
+
+\subsection{What the current gate guarantees}
+For correctly typed inputs, the implemented contract ensures that every weighted record passed the listed checks at the supplied decision time. It does not ensure that the supplied time is correct, that a provenance string points to a genuine source, or that a declared identification argument is true. Timestamps in the reference example are integer clock values; a production interface must reconcile time zones, publication times, revisions and clock synchronization before passing them to the gate. The availability interval includes both endpoints.
+
+Eligibility is therefore a necessary interface condition, not a sufficient economic guarantee. A false identification declaration can pass. An accurate estimate can be ineligible because it was unavailable at the decision time. A correctly rejected proposal can leave a profitable opportunity unused. These possibilities are features of the distinction between evidence discipline and investment performance, rather than contradictions.
+
+\subsection{An elementary normalization guarantee}
+For a nonempty finite eligible set, the largest logit $m$ exists. Every difference $\ell_k-m$ is nonpositive, so its exponential lies between zero and one in floating-point computation; at least one equals one. The sum in the denominator is therefore positive. Dividing each exponential by that common sum produces nonnegative weights summing to one, up to rounding. In exact arithmetic all weights are positive; extremely small terms can underflow to zero in floating point. Subtracting $m$ is valid because multiplying every original exponential by the same positive factor $\exp(-m)$ cancels between numerator and denominator. This is a numerical guarantee about normalization, not a calibration claim about confidence.
+
+\subsection{Adaptation, alpha decay and hardware}
+Alpha decay denotes deterioration of a strategy's risk-adjusted excess return after costs. A stale causal explanation or an obsolete observation-to-regime mapping is one possible source of deterioration. Evidence expiry, provenance checks and explicit rejection reasons can make such failures easier to inspect. The experiment does not measure alpha, detect its decay, or establish that this architecture combats it in live markets. The adverse emission-shift result instead shows why a regime-conditioned architecture requires monitoring of state meaning as well as state confidence.
+
+An evaluation of actual adaptability would need chronological data, realistic execution costs, independent test periods, learned regimes, matched risk budgets and comparisons against simpler abstention rules. A causal gate should be compared with a gate that merely reduces exposure; otherwise lower losses may reflect less trading rather than better causal reasoning. These are prospective requirements, not completed experiments.
+
+An FPGA (field-programmable gate array: reconfigurable digital hardware) could execute bounded comparisons, validity flags and routing arithmetic. A proposed partition would leave graph assessment and evidence construction on a host processor and pass bounded records to hardware for eligibility and normalization. Fixed-point arithmetic represents numbers with a fixed scale and finite range; it would require explicit overflow, underflow and approximation tests against the floating-point reference. No hardware implementation, latency measurement, energy benchmark or acceleration factor is reported. Hardware cannot make an unsupported identification declaration true.

@@ -1,0 +1,29 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[left=15mm,right=15mm,top=25mm,bottom=18mm,headsep=8mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,graphicx,microtype,array,tabularx}
+\usepackage[round]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz,listings,fancyhdr,longtable}
+\usetikzlibrary{arrows.meta,positioning}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{4pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small CMTF | Identification-aware expert routing}
+\fancyhead[R]{\small Working paper}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,keepspaces=true,showstringspaces=false,frame=single,numbers=left,numberstyle=\tiny,numbersep=5pt}
+\newcommand{\systemname}{CMTF}
+\title{Agentic Causal Macro Intelligence:\\An Identification-Aware Framework for\\Regime-Conditional Expert Routing}
+\author{Timilehin Olapade}
+\hypersetup{pdftitle={Agentic Causal Macro Intelligence: An Identification-Aware Framework for Regime-Conditional Expert Routing},pdfauthor={Timilehin Olapade},pdfsubject={Causal evidence contracts, regime uncertainty, expert routing and reproducible synthetic diagnostics},pdfkeywords={CMTF, neuro-symbolic systems, causal inference, mixture of experts, regime shift, abstention},pdflang={en}}
+\begin{document}\maketitle
+\begin{abstract}\input{abstract}\end{abstract}
+\input{body}
+\input{extensions}
+\input{conclusion}
+\input{statements}
+\bibliographystyle{plainnat}\bibliography{references}
+\clearpage\appendix\input{appendix}
+\input{implementation_guide}
+\end{document}
